@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="calzyApp">
+	<head>
+        <script src="libs/angular.min.js"></script>
+        <script src="libs/angular-route.min.js"></script>
+        <script src="libs/jquery-1.10.1.min.js"></script>
+        <script src="libs/jquery-ui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+        var calzyApp=angular.module("calzyApp",[]);
+            calzyApp.controller("homeController",function($scope){
+                $scope.result='';
+                $scope.buttonCliked=function($event, keyCode)
+                {
+                    $scope.result+=angular.element($event.target).text();
+                };
+                $scope.evalExpression=function($event)
+                {
+                    $event.stopPropagation();
+                     $scope.result=eval($scope.result); 
+                };
+                $scope.del=function($event)
+                {
+                    $event.stopPropagation();
+                  $scope.result="";
+                };
+             });
+        </script>
+    </head>
+<body>
+    <div class="wrapper" ng-controller="homeController">
+        <div class="resultWrapper">
+            <input type="text" class="resultInput" ng-model="result"/>
+        </div>
+        <div class="buttonsWrapper">
+            <div class="basicLayout" ng-click="buttonCliked($event, 57);">
+                <div class="numbers" >
+                    <div class="numRow">
+                        <div class="rowElement" ><span>9</span></div>
+                        <div class="rowElement"><span>8</span></div>
+                        <div class="rowElement"><span>7</span></div>
+                    </div>
+                    <div class="numRow">
+                        <div class="rowElement"><span>6</span></div>
+                        <div class="rowElement"><span>5</span></div>
+                        <div class="rowElement"><span>4</span></div>
+                    </div>
+                    <div class="numRow">
+                        <div class="rowElement"><span>3</span></div>
+                        <div class="rowElement"><span>2</span></div>
+                        <div class="rowElement"><span>1</span></div>
+                    </div>
+                    <div class="numRow">
+                        <div class="rowElement"><span>.</span></div>
+                        <div class="rowElement"><span>0</span></div>
+                        <div class="rowElement" ng-click="evalExpression($event);"><span>=</span></div>
+                    </div>
+                </div>
+                <div class="symbols">
+                    <div class="rowElement" ng-click="del($event);"><span>DEL</span></div>
+                    <div class="rowElement"><span>/</span></div>
+                    <div class="rowElement"><span>*</span></div>
+                    <div class="rowElement"><span>-</span></div>
+                    <div class="rowElement"><span>+</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body> 
+</html>

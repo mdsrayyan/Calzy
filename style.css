@@ -1,0 +1,89 @@
+body
+{
+    margin: 0 auto;
+    padding: 0;
+    /*max-width: 620px;*/
+    box-shadow: 0px 0px 8px black;
+}
+.wrapper{
+ width:100%;
+    height:100vh;
+    color:white;
+    max-width: 340px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 20px black;
+}
+.resultWrapper
+{
+ width:100%;
+    height:30%;
+    background: #FFFEFD;
+}
+.buttonsWrapper
+{
+ width:100%;
+    height:70%;
+    background: #50504E;
+}
+.basicLayout
+{
+    width:100%;
+    height:100%;
+}
+.numbers
+{
+ width:75%;
+    height:100%;
+    float: left;
+}
+.symbols
+{
+    width: 25%;
+    height: 100%;
+    float: right;
+    background-color: rgb(220, 145, 8);
+}
+.numbers .numRow
+{
+ width:100%;
+    height:25%;
+}
+.numRow .rowElement
+{
+ width:33.3%;
+    height:100%;
+    float:left;
+    display:table;
+}
+.numRow .rowElement:hover,.symbols .rowElement:hover
+{
+    background-color:rgba(255, 255, 255, 0.20);   
+}
+.numRow .rowElement span,.symbols .rowElement span
+{
+    display: table-cell;
+ vertical-align: middle;
+    text-align: center;
+    font-size: 2em;
+}
+.symbols .rowElement span
+{
+    font-size: 2em;
+}
+.symbols .rowElement
+{
+ width:100%;
+    height:20%;
+    display:table;
+}
+.resultInput
+{
+    font-size: 2em;
+    width: 97%;
+    height: 100%;
+    text-align: right;
+    padding-right: 3%;
+    color: #F59F03;
+    border:0;
+        background: #353434;
+}
